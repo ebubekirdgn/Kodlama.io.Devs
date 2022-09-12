@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Core.Persistence.Repositories;
+﻿using Core.Persistence.Repositories;
 
 namespace Kodlama.io.Devs.Domain.Entities
 {

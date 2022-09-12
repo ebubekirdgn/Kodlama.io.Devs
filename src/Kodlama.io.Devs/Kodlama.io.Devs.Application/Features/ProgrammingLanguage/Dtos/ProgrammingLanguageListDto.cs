@@ -1,8 +1,7 @@
 ﻿namespace Kodlama.io.Devs.Application.Features.Dtos
 {
-    public class CreatedProgrammingLanguageDto
+    public class ProgrammingLanguageListDto : BaseProgrammingLanguageDto
     {
-        public int Id { get; set; }
         public string Name { get; set; }
     }
 }
