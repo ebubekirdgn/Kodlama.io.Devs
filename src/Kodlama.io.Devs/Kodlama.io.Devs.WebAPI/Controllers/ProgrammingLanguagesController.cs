@@ -2,6 +2,8 @@
 using Kodlama.io.Devs.Application.Features.Commands.DeleteProgrammingLanguage;
 using Kodlama.io.Devs.Application.Features.Commands.UpdateProgrammingLanguage;
 using Kodlama.io.Devs.Application.Features.Dtos;
+using Kodlama.io.Devs.Application.Features.ProgrammingLanguage.Queries.GetByIdProgrammingLanguage;
+using Kodlama.io.Devs.Application.Features.ProgrammingLanguage.Queries.GetListProgrammingLanguage;
 using Kodlama.io.Devs.WebAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
