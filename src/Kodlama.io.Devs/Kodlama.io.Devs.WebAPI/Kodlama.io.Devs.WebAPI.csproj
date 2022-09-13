@@ -21,9 +21,8 @@
 		</PackageReference>
 	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Kodlama.io.Devs.Persistence\Kodlama.io.Devs.Persistence.csproj" />
-    <ProjectReference Include="..\..\corePackages\Core.Persistence\Core.Persistence.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\Kodlama.io.Devs.Application\Kodlama.io.Devs.Application.csproj" />
+	</ItemGroup>
 
 </Project>
