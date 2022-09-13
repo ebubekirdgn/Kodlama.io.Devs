@@ -1,4 +1,4 @@
-﻿using Kodlama.io.Devs.Domain.Entities;
+using Kodlama.io.Devs.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
@@ -26,13 +26,9 @@ namespace Kodlama.io.Devs.Persistence.Contexts
                 a.Property(p => p.Id).HasColumnName("Id");
                 a.Property(p => p.Name).HasColumnName("Name");
             });
-
-
-
-            ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "C#"), new(2, "Ruby"), new(3, "Java"), new(4, "Pyhton") }; 
+            
+            ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "C#"), new(2, "Ruby"), new(3, "Java"), new(4, "Python") }; 
             modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguagesEntitySeeds);
-
-
         }
 
     }
