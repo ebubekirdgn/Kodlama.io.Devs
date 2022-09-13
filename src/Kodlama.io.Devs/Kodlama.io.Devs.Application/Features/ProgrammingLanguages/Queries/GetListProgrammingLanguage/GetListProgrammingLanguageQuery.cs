@@ -1,15 +1,13 @@
-﻿using AutoMapper;
-using Core.Application.Requests;
+﻿using Core.Application.Requests;
 using Core.Persistence.Paging;
 using Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Models;
-using Kodlama.io.Devs.Domain.Entities;
-using MediatR;
 
 namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetListProgrammingLanguage
 {
     public class GetListProgrammingLanguageQuery : IRequest<ProgrammingLanguageListModel>
     {
         public PageRequest PageRequest { get; set; }
+
         public class GetListProgrammingLanguageQueryHandler : IRequestHandler<GetListProgrammingLanguageQuery, ProgrammingLanguageListModel>
         {
             private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
@@ -28,9 +26,7 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetL
                 ProgrammingLanguageListModel mapperProgrammingLanguageModel = _mapper.Map<ProgrammingLanguageListModel>(programmingLanguages);
 
                 return mapperProgrammingLanguageModel;
-
             }
         }
     }
 }
-

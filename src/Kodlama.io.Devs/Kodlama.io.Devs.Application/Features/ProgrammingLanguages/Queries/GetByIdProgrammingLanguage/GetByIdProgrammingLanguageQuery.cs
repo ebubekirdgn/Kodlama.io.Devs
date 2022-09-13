@@ -1,5 +1,4 @@
-﻿
-namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetByIdProgrammingLanguage
+﻿namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetByIdProgrammingLanguage
 {
     public class GetByIdProgrammingLanguageQuery : IRequest<ProgrammingLanguageGetByIdDto>
     {
@@ -20,8 +19,6 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetB
 
             public async Task<ProgrammingLanguageGetByIdDto> Handle(GetByIdProgrammingLanguageQuery request, CancellationToken cancellationToken)
             {
-
-
                 ProgrammingLanguage programmingLanguage = await _programmingLanguageRepository.GetAsync(p => p.Id == request.Id);
 
                 _programmingLanguageBusinessRules.ProgrammingLanguageExistWhenRequested(programmingLanguage);
@@ -29,10 +26,7 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Queries.GetB
                 ProgrammingLanguageGetByIdDto programmingLanguageGetByIdDto = _mapper.Map<ProgrammingLanguageGetByIdDto>(programmingLanguage); // !!!
 
                 return programmingLanguageGetByIdDto;
-
             }
         }
-
-
     }
 }

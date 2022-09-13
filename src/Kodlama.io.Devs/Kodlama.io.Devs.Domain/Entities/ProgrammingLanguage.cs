@@ -1,9 +1,4 @@
 ﻿using Core.Persistence.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kodlama.io.Devs.Domain.Entities
 {
@@ -13,7 +8,6 @@ namespace Kodlama.io.Devs.Domain.Entities
 
         public ProgrammingLanguage()
         {
-
         }
 
         public ProgrammingLanguage(int id, string name) : this()

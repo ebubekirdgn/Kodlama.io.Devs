@@ -18,20 +18,17 @@
                 _programmingLanguageBusinessRules = programmingLanguageBusinessRules;
             }
 
-
             public async Task<UpdatedProgrammingLanguageDto> Handle(UpdateProgrammingLanguageCommand request, CancellationToken cancellationToken)
             {
                 ProgrammingLanguage findDataForUpdatedProgrammingLanguage = await _programmingLanguageRepository.GetAsync(p => p.Id == request.Id);
 
                 await _programmingLanguageBusinessRules.ProgrammingLanguageNameCanNotBeDuplicatedWhenInserted(request.Name);
 
-
                 ProgrammingLanguage mappedProgrammingLanguage = _mapper.Map<ProgrammingLanguage>(findDataForUpdatedProgrammingLanguage);
                 ProgrammingLanguage updatedProgrammingLanguage = await _programmingLanguageRepository.UpdateAsync(mappedProgrammingLanguage);
                 UpdatedProgrammingLanguageDto updatedProgrammingLanguageDto = _mapper.Map<UpdatedProgrammingLanguageDto>(updatedProgrammingLanguage);
 
                 return updatedProgrammingLanguageDto;
-
             }
         }
     }
