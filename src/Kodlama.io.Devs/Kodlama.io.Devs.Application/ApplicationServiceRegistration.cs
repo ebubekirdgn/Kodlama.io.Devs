@@ -1,4 +1,6 @@
-﻿namespace Kodlama.io.Devs.Application
+﻿using Kodlama.io.Devs.Application.Features.SocialMedia.Github.Rules;
+
+namespace Kodlama.io.Devs.Application
 {
     public static class ApplicationServiceRegistration
     {
@@ -8,6 +10,8 @@
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
+            services.AddScoped<ProgrammingTechnologyBusinessRules>();
+            services.AddScoped<GithubAccountBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             //services.AddTransient(typeof(IPipelineBehavior<,>), typeof(AuthorizationBehavior<,>));
