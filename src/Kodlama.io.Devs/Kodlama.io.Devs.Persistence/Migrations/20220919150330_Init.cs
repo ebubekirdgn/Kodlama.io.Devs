@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Kodlama.io.Devs.Persistence.Migrations
 {
-    public partial class GithubandProgrammingTechnologies : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,38 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OperationClaim", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProgrammingLanguages",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProgrammingLanguages", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "User",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    AuthenticatorType = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -40,25 +72,6 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                         principalTable: "ProgrammingLanguages",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "User",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PasswordSalt = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    PasswordHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false),
-                    AuthenticatorType = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_User", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -134,6 +147,26 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "ProgrammingLanguages",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 1, "C#" });
+
+            migrationBuilder.InsertData(
+                table: "ProgrammingLanguages",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 2, "Pyhton" });
+
+            migrationBuilder.InsertData(
+                table: "ProgrammingLanguages",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 3, "Java" });
+
+            migrationBuilder.InsertData(
+                table: "ProgrammingTechnologies",
+                columns: new[] { "Id", "Name", "ProgrammingLanguageId" },
+                values: new object[] { 1, "Spring", 3 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_GithubAccounts_UserId",
                 table: "GithubAccounts",
@@ -173,6 +206,9 @@ namespace Kodlama.io.Devs.Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserOperationClaim");
+
+            migrationBuilder.DropTable(
+                name: "ProgrammingLanguages");
 
             migrationBuilder.DropTable(
                 name: "OperationClaim");

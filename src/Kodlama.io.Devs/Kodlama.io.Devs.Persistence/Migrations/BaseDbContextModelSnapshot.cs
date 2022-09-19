@@ -229,6 +229,14 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                     b.HasIndex("ProgrammingLanguageId");
 
                     b.ToTable("ProgrammingTechnologies", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Spring",
+                            ProgrammingLanguageId = 3
+                        });
                 });
 
             modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>

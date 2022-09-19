@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Kodlama.io.Devs.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20220919144228_GithubandProgrammingTechnologies")]
-    partial class GithubandProgrammingTechnologies
+    [Migration("20220919150330_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -231,6 +231,14 @@ namespace Kodlama.io.Devs.Persistence.Migrations
                     b.HasIndex("ProgrammingLanguageId");
 
                     b.ToTable("ProgrammingTechnologies", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Spring",
+                            ProgrammingLanguageId = 3
+                        });
                 });
 
             modelBuilder.Entity("Core.Security.Entities.RefreshToken", b =>
