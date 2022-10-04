@@ -10,7 +10,6 @@ namespace Kodlama.io.Devs.Domain.Entities
 
         public ProgrammingTechnology()
         {
-
         }
 
         public ProgrammingTechnology(int id, int programmingLanguageId, string name) : this()
@@ -18,7 +17,6 @@ namespace Kodlama.io.Devs.Domain.Entities
             Id = id;
             ProgrammingLanguageId = programmingLanguageId;
             Name = name;
-
         }
     }
 }

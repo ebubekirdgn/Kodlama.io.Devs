@@ -1,7 +1,4 @@
-﻿using Core.CrossCuttingConcerns.Exceptions;
-using Core.Persistence.Paging;
-
-namespace Kodlama.io.Devs.Application.Features.ProgrammingTechnologies.Rules
+﻿namespace Kodlama.io.Devs.Application.Features.ProgrammingTechnologies.Rules
 {
     public class ProgrammingTechnologyBusinessRules
     {
@@ -11,7 +8,7 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingTechnologies.Rules
         {
             _programmingTechnologyRepository = programmingTechnologyRepository;
         }
-        
+
         public async Task ProgrammingTechnologyNameCanNotBeDuplicatedWhenInserted(string name)
         {
             IPaginate<ProgrammingTechnology> result = await _programmingTechnologyRepository.GetListAsync(p => p.Name == name);
@@ -23,6 +20,5 @@ namespace Kodlama.io.Devs.Application.Features.ProgrammingTechnologies.Rules
             IPaginate<ProgrammingTechnology> result = await _programmingTechnologyRepository.GetListAsync(p => p.Id == id);
             if (result.Items == null) throw new BusinessException("Programming technology can not found.");
         }
-
     }
 }

@@ -1,7 +1,4 @@
-﻿using Core.CrossCuttingConcerns.Exceptions;
-using Core.Persistence.Paging;
-
-namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Rules
+﻿namespace Kodlama.io.Devs.Application.Features.ProgrammingLanguages.Rules
 {
     public class ProgrammingLanguageBusinessRules
     {

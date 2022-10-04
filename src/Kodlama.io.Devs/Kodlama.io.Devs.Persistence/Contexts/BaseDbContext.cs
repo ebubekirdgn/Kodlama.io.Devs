@@ -46,7 +46,6 @@ namespace Kodlama.io.Devs.Persistence.Contexts
             ProgrammingTechnology[] programmingTechnologiesEntitySeeds = { new(1, 3, "Spring") }; //test datası oluşturması için
             modelBuilder.Entity<ProgrammingTechnology>().HasData(programmingTechnologiesEntitySeeds);
 
-
             modelBuilder.Entity<GithubAccount>(a =>
             {
                 a.ToTable("GithubAccounts").HasKey(k => k.Id);
@@ -57,7 +56,6 @@ namespace Kodlama.io.Devs.Persistence.Contexts
                 a.HasOne(g => g.User);
             });
 
-          
             ProgrammingLanguage[] programmingLanguagesEntitySeeds = { new(1, "C#"), new(2, "Pyhton"), new(3, "Java") }; //test datası oluşturması için
             modelBuilder.Entity<ProgrammingLanguage>().HasData(programmingLanguagesEntitySeeds);
         }

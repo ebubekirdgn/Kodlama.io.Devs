@@ -20,7 +20,6 @@ namespace Kodlama.io.Devs.WebAPI.Controllers
         [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete([FromRoute] DeleteGithubAccountCommand command)
         {
-
             DeletedGithubAccountDto result = await Mediator.Send(command);
             return Ok(result);
         }

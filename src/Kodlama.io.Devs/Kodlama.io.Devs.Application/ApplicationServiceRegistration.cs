@@ -1,6 +1,4 @@
-﻿using Kodlama.io.Devs.Application.Features.SocialMedia.Github.Rules;
-
-namespace Kodlama.io.Devs.Application
+﻿namespace Kodlama.io.Devs.Application
 {
     public static class ApplicationServiceRegistration
     {
