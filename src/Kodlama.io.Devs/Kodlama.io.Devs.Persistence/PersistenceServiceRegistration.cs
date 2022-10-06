@@ -19,6 +19,11 @@ namespace Kodlama.io.Devs.Persistence
             services.AddScoped<IProgrammingTechnologyRepository, ProgrammingTechnologyRepository>();
             services.AddScoped<IGithubAccountRepository, GithubAccountRepository>();
 
+            services.AddScoped<IOperationClaimRepository, OperationClaimRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+            services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+
             return services;
         }
     }
