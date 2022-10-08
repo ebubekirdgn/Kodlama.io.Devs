@@ -1,6 +1,6 @@
-﻿namespace Kodlama.io.Devs.Application.Features.OperationClaims.Constants
+﻿namespace Kodlama.io.Devs.Application.Features.UserOperationClaims.Constants
 {
-    public static class OperationClaims
+    public class UserOperationClaims
     {
         public static string Add = "Add";
         public static string Delete = "Delete";
