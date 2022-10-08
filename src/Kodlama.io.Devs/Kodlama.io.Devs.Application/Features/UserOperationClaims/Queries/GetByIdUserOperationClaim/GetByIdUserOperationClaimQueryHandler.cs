@@ -1,5 +1,6 @@
 ﻿using Core.Security.Entities;
 using Kodlama.io.Devs.Application.Features.UserOperationClaims.Dtos;
+using Kodlama.io.Devs.Application.Features.UserOperationClaims.Rules;
 
 namespace Kodlama.io.Devs.Application.Features.UserOperationClaims.Queries.GetByIdUserOperationClaim
 {
